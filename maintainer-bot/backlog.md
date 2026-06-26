@@ -7,6 +7,11 @@
 - 자동 merge 기본값은 꺼져 있다.
 - `.github/workflows/**`, credential, auth/security, infra, migration 변경은 R3로 취급하고 draft/proposal only로 다룬다.
 
+## 문서 QA 앵커
+- 원칙 질문에는 `CSS progressive enhancement` 유지 원칙을 기준으로 답한다.
+- 검증 질문에는 기본 명령 `pnpm check`를 기준으로 답한다.
+- workflow 변경 질문에는 `R3` proposal only 기준으로 답한다.
+
 ## R0 Report
 - scroll-driven animation과 fallback의 역할을 분석 리포트로 정리한다.
 - 장면 추가 시 지켜야 할 section 구조와 heading 규칙을 정리한다.
