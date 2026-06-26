@@ -189,6 +189,15 @@
     --scene-bg: #fffdf7;
   }
 
+  .scene-d {
+    --scene-accent: 52 121 96;
+    --scene-glow-position: 30% 68%;
+    --scene-glow-alpha: 11%;
+    --scene-sweep-alpha: 8%;
+    --scene-sweep-stop: 56%;
+    --scene-bg: #f7fff9;
+  }
+
   .scene-card {
     --scroll-animation: reveal-card;
     --scroll-animation-range: entry 8% cover 42%;
