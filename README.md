@@ -23,7 +23,7 @@ pnpm dev
 pnpm check
 ```
 
-`pnpm check`는 source와 build output 모두에서 런타임 JavaScript가 없는지 검사한다.
+`pnpm check`는 `pnpm lint`, `pnpm build`, `pnpm no-js:dist`를 순서대로 실행해 source와 build output 모두에서 런타임 JavaScript가 없는지 검사한다.
 
 ## 자가 개선
 이 저장소에는 자가 개선 엔진을 두지 않는다. 중앙 control plane인 `okorion/self-improving-maintainer-bot`이 `profiles/overtura/css-scroll-odyssey.json` profile로 이 저장소를 target repo로 다룬다.
