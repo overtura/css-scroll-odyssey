@@ -1,14 +1,16 @@
-# PROJECT_NAME
+# CSS Scroll Odyssey
 
-한 줄 소개를 여기에 적습니다.
+JavaScript 없이 CSS scroll-driven animation으로 만드는 인터랙티브 스토리 실험입니다. sticky layout, scroll snap, view timeline, mask, blend mode를 조합해 스크롤 기반 장면 전환을 구현합니다.
 
 ## 목적
-- 무엇을 검증하는 프로젝트인지 2~3줄로 적습니다.
+- 스크롤 기반 모션을 CSS만으로 실험한다.
+- scroll-driven animation 미지원 브라우저에서도 읽을 수 있는 fallback을 유지한다.
+- self-improving bot이 새 장면, 접근성, fallback, workflow 개선을 자동 PR로 제안하고 merge한다.
 
 ## 사용자 flow
-1. 
-2. 
-3. 
+1. 페이지를 스크롤하며 장면 전환을 본다.
+2. 각 장면의 카드가 viewport 진입률에 따라 드러나는지 확인한다.
+3. 후속 PR에서 새 장면과 fallback을 확장한다.
 
 ## 실행 방법
 ```bash
@@ -21,6 +23,15 @@ pnpm dev
 pnpm check
 ```
 
+`pnpm check`는 source와 build output 모두에서 런타임 JavaScript가 없는지 검사한다.
+
+## 자가 개선
+```bash
+pnpm self-improve:context
+pnpm self-improve:guard
+```
+
 ## 범위 밖
-- 이번 MVP에서 하지 않는 것
-- 미래 작업 후보
+- 런타임 JavaScript
+- SPA router
+- 실제 secret 또는 credential 저장

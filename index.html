@@ -3,10 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PROJECT_NAME</title>
+    <meta
+      name="description"
+      content="JavaScript 없이 CSS scroll-driven animation으로 만드는 인터랙티브 스토리"
+    />
+    <title>CSS Scroll Odyssey</title>
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <a href="#top">CSS Scroll Odyssey</a>
+      <nav aria-label="장면 이동">
+        <a href="#signal">Signal</a>
+        <a href="#drift">Drift</a>
+        <a href="#arrival">Arrival</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero chapter">
+        <div class="copy">
+          <h1>스크롤만으로 장면이 열리는 CSS 항해</h1>
+          <p>
+            JavaScript 없이 sticky layout, scroll snap, view timeline, mask, blend mode를 조합해
+            인터랙티브 랜딩 페이지의 가능성을 실험합니다.
+          </p>
+        </div>
+        <div class="sun" aria-hidden="true"></div>
+      </section>
+
+      <section id="signal" class="chapter scene scene-a">
+        <div class="scene-card">
+          <span>01</span>
+          <h2>신호 수집</h2>
+          <p>view timeline이 지원되는 브라우저에서는 카드가 viewport 진입률에 맞춰 선명해집니다.</p>
+        </div>
+      </section>
+
+      <section id="drift" class="chapter scene scene-b">
+        <div class="scene-card">
+          <span>02</span>
+          <h2>궤도 이동</h2>
+          <p>sticky 배치와 scroll snap이 JavaScript 없는 화면 전환 리듬을 만듭니다.</p>
+        </div>
+      </section>
+
+      <section id="arrival" class="chapter scene scene-c">
+        <div class="scene-card">
+          <span>03</span>
+          <h2>도착</h2>
+          <p>self-improve workflow가 새 장면, 접근성, fallback을 자동 PR로 제안합니다.</p>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
