@@ -2,7 +2,8 @@
   "name": "CSS Scroll Odyssey",
   "kind": "html-css-only-scroll-story",
   "runtime": "Static HTML + CSS + Vite build only",
-  "goal": "스크롤 기반 CSS 모션 스토리를 한국어 no-JS 페이지로 축적하고 자동 PR로 개선한다.",
+  "language": "ko",
+  "goal": "스크롤 기반 CSS 모션 스토리를 밝은 no-JS 페이지로 축적하고, 자동 PR로 장면, 접근성, fallback을 개선한다.",
   "allowedChangeScope": [
     "index.html",
     "styles.css",
@@ -24,5 +25,9 @@
     ".npmrc",
     "런타임 JavaScript",
     "실제 API key 또는 credential"
+  ],
+  "qualityGates": [
+    "pnpm self-improve:guard",
+    "pnpm check"
   ]
 }
