@@ -69,6 +69,7 @@
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     color: var(--color-muted);
     font-size: 14px;
@@ -189,6 +190,15 @@
     --scene-bg: #fffdf7;
   }
 
+  .scene-d {
+    --scene-accent: 47 132 91;
+    --scene-glow-position: 30% 20%;
+    --scene-glow-alpha: 11%;
+    --scene-sweep-alpha: 8%;
+    --scene-sweep-stop: 54%;
+    --scene-bg: #f8fff9;
+  }
+
   .scene-card {
     --scroll-animation: reveal-card;
     --scroll-animation-range: entry 8% cover 42%;
@@ -230,6 +240,34 @@
     margin-top: 12px;
     font-size: clamp(40px, 7vw, 84px);
     line-height: 0.95;
+  }
+
+  .scene-notes {
+    display: grid;
+    gap: 10px;
+    margin: 28px 0 0;
+    padding: 0;
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.55;
+    list-style: none;
+  }
+
+  .scene-notes li {
+    display: grid;
+    grid-template-columns: 10px minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+  }
+
+  .scene-notes li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    margin-top: 0.65em;
+    border-radius: 50%;
+    background: rgb(var(--scene-accent));
+    box-shadow: 0 0 0 4px rgb(var(--scene-accent) / 12%);
   }
 }
 
