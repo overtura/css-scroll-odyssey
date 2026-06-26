@@ -110,7 +110,17 @@
 }
 
 @layer scenes {
+  .sun,
+  .scene-card {
+    animation: var(--scroll-animation) var(--motion-scroll);
+    animation-timeline: view();
+    animation-range: var(--scroll-animation-range);
+  }
+
   .sun {
+    --scroll-animation: float-sun;
+    --scroll-animation-range: entry 0% exit 100%;
+
     width: min(42vw, 420px);
     aspect-ratio: 1;
     border-radius: 999px;
@@ -118,9 +128,6 @@
       radial-gradient(circle, #ffe7a3 0 22%, #f8a84d 23% 44%, transparent 45%),
       repeating-linear-gradient(0deg, transparent 0 18px, rgb(255 255 255 / 52%) 19px 20px);
     filter: drop-shadow(0 18px 52px rgb(183 121 0 / 22%));
-    animation: float-sun var(--motion-scroll);
-    animation-timeline: view();
-    animation-range: entry 0% exit 100%;
   }
 
   .scene::before {
@@ -154,6 +161,9 @@
   }
 
   .scene-card {
+    --scroll-animation: reveal-card;
+    --scroll-animation-range: entry 8% cover 42%;
+
     width: min(720px, 100%);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-frame);
@@ -161,9 +171,6 @@
     background: var(--color-surface);
     box-shadow: var(--shadow-panel);
     backdrop-filter: blur(16px);
-    animation: reveal-card var(--motion-scroll);
-    animation-timeline: view();
-    animation-range: entry 8% cover 42%;
   }
 
   .scene-card span {
