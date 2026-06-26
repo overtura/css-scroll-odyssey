@@ -130,6 +130,28 @@
     filter: drop-shadow(0 18px 52px rgb(183 121 0 / 22%));
   }
 
+  .scene {
+    --scene-accent: 0 127 140;
+    --scene-glow-position: 28% 24%;
+    --scene-glow-alpha: 10%;
+    --scene-sweep-alpha: 9%;
+    --scene-sweep-stop: 48%;
+    --scene-bg: var(--color-bg);
+
+    background:
+      radial-gradient(
+        circle at var(--scene-glow-position),
+        rgb(var(--scene-accent) / var(--scene-glow-alpha)),
+        transparent 34%
+      ),
+      linear-gradient(
+        135deg,
+        rgb(var(--scene-accent) / var(--scene-sweep-alpha)),
+        transparent var(--scene-sweep-stop)
+      ),
+      var(--scene-bg);
+  }
+
   .scene::before {
     content: '';
     position: absolute;
@@ -139,25 +161,20 @@
     transform: rotate(18deg);
   }
 
-  .scene-a {
-    background:
-      radial-gradient(circle at 28% 24%, rgb(0 127 140 / 10%), transparent 34%),
-      linear-gradient(135deg, rgb(0 127 140 / 9%), transparent 48%),
-      var(--color-bg);
-  }
-
   .scene-b {
-    background:
-      radial-gradient(circle at 72% 22%, rgb(110 87 216 / 10%), transparent 34%),
-      linear-gradient(135deg, rgb(110 87 216 / 9%), transparent 52%),
-      #fbfaff;
+    --scene-accent: 110 87 216;
+    --scene-glow-position: 72% 22%;
+    --scene-sweep-stop: 52%;
+    --scene-bg: #fbfaff;
   }
 
   .scene-c {
-    background:
-      radial-gradient(circle at 68% 18%, rgb(183 121 0 / 12%), transparent 34%),
-      linear-gradient(135deg, rgb(183 121 0 / 8%), transparent 50%),
-      #fffdf7;
+    --scene-accent: 183 121 0;
+    --scene-glow-position: 68% 18%;
+    --scene-glow-alpha: 12%;
+    --scene-sweep-alpha: 8%;
+    --scene-sweep-stop: 50%;
+    --scene-bg: #fffdf7;
   }
 
   .scene-card {
