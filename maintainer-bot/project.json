@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "controlPlane": "okorion/self-improving-maintainer-bot",
+  "name": "CSS Scroll Odyssey",
+  "kind": "html-css-only-scroll-story",
+  "runtime": "Static HTML + CSS + Vite build only",
+  "language": "ko",
+  "goal": "스크롤 기반 CSS 모션 스토리를 밝은 no-JS 페이지로 축적하고, 중앙 maintainer bot이 PR 단위로 장면, 접근성, fallback을 개선한다.",
+  "automation": {
+    "defaultRiskLevel": "R1",
+    "maxAutoMergeRiskLevel": "R1",
+    "r3Mode": "draft_or_proposal_only",
+    "autoMerge": false,
+    "verifyCommands": [
+      "pnpm install --frozen-lockfile || pnpm install",
+      "pnpm check"
+    ],
+    "allowPaths": [
+      "README.md",
+      "DESIGN.md",
+      "docs/**",
+      "maintainer-bot/**",
+      "index.html",
+      "styles.css",
+      "design-system/**"
+    ],
+    "denyPaths": [
+      ".github/workflows/**",
+      "CODEOWNERS",
+      ".env*",
+      ".npmrc",
+      "src/**",
+      "scripts/**",
+      "infra/**",
+      "terraform/**",
+      "k8s/**",
+      "migrations/**",
+      "**/*.js",
+      "**/*.ts",
+      "*.pem",
+      "*.key"
+    ],
+    "maxFiles": 10,
+    "maxLines": 250
+  }
+}
