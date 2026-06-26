@@ -140,8 +140,6 @@
   }
 
   .scene {
-    --scene-accent: 0 127 140;
-    --scene-glow-position: 28% 24%;
     --scene-glow-alpha: 10%;
     --scene-sweep-alpha: 9%;
     --scene-sweep-stop: 48%;
@@ -159,6 +157,11 @@
         transparent var(--scene-sweep-stop)
       ),
       var(--scene-bg);
+  }
+
+  .scene-a {
+    --scene-accent: 0 127 140;
+    --scene-glow-position: 28% 24%;
   }
 
   .scene::before {
