@@ -77,7 +77,9 @@
 
   .chapter {
     min-height: 100vh;
+    min-block-size: 100svh;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     position: relative;
     display: grid;
     place-items: center;
@@ -163,6 +165,7 @@
   .scene-a {
     --scene-accent: 0 127 140;
     --scene-glow-position: 28% 24%;
+    --scene-progress: 25%;
   }
 
   .scene::before {
@@ -179,6 +182,7 @@
     --scene-glow-position: 72% 22%;
     --scene-sweep-stop: 52%;
     --scene-bg: #fbfaff;
+    --scene-progress: 50%;
   }
 
   .scene-c {
@@ -188,6 +192,7 @@
     --scene-sweep-alpha: 8%;
     --scene-sweep-stop: 50%;
     --scene-bg: #fffdf7;
+    --scene-progress: 75%;
   }
 
   .scene-d {
@@ -197,6 +202,7 @@
     --scene-sweep-alpha: 8%;
     --scene-sweep-stop: 54%;
     --scene-bg: #f8fff9;
+    --scene-progress: 100%;
   }
 
   .scene-card {
@@ -214,12 +220,29 @@
     backdrop-filter: blur(16px);
   }
 
-  .scene-card::before {
+  .scene-card::before,
+  .scene-card::after {
     content: '';
     position: absolute;
-    inset: 0 0 auto;
+    top: 0;
+    left: 0;
     height: 6px;
-    background: linear-gradient(90deg, rgb(var(--scene-accent) / 86%), transparent 72%);
+    pointer-events: none;
+  }
+
+  .scene-card::before {
+    right: 0;
+    background: rgb(var(--scene-accent) / 13%);
+  }
+
+  .scene-card::after {
+    width: var(--scene-progress);
+    background: linear-gradient(
+      90deg,
+      rgb(var(--scene-accent) / 92%),
+      rgb(var(--scene-accent) / 54%)
+    );
+    box-shadow: 0 10px 28px rgb(var(--scene-accent) / 18%);
   }
 
   .scene-card span {
