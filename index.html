@@ -13,63 +13,170 @@
   </head>
   <body>
     <header class="site-header">
-      <a href="#top">CSS Scroll Odyssey</a>
-      <nav aria-label="장면 이동">
-        <a href="#signal">Signal</a>
-        <a href="#drift">Drift</a>
-        <a href="#arrival">Arrival</a>
-        <a href="#fallback">Fallback</a>
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>CSS Scroll Odyssey</strong>
+          <small>no-JS scroll story</small>
+        </span>
+      </a>
+      <nav class="scene-nav" aria-label="장면 이동">
+        <a href="#signal"><span>01</span> 신호</a>
+        <a href="#drift"><span>02</span> 이동</a>
+        <a href="#arrival"><span>03</span> 도착</a>
+        <a href="#fallback"><span>04</span> 읽기</a>
       </nav>
+      <label class="reading-toggle" for="reading-mode">
+        <input id="reading-mode" type="checkbox" />
+        <span>정적 읽기</span>
+      </label>
+      <div class="story-progress" aria-hidden="true"><span></span></div>
     </header>
 
-    <main id="top">
-      <section class="hero chapter">
-        <div class="copy">
-          <h1>스크롤만으로 장면을 여는 CSS 항해</h1>
-          <p>
-            JavaScript 없이 sticky layout, scroll snap, view timeline, mask를 조합해 밝고 읽기 쉬운
-            인터랙티브 랜딩 페이지를 실험합니다.
-          </p>
+    <main>
+      <section id="top" class="chapter hero">
+        <div class="chapter-layout">
+          <div class="chapter-copy">
+            <p class="eyebrow">CSS scroll-driven narrative</p>
+            <h1>CSS로 이어지는 네 장면</h1>
+            <p class="chapter-lead">
+              스크롤 위치를 장면의 시간축으로 삼아 신호부터 읽기 fallback까지 연결합니다. 모든 흐름은
+              HTML과 CSS만으로 작동합니다.
+            </p>
+            <dl class="story-facts" aria-label="이 실험의 구성">
+              <div><dt>장면</dt><dd>4</dd></div>
+              <div><dt>런타임 JS</dt><dd>0</dd></div>
+              <div><dt>읽기 모드</dt><dd>2</dd></div>
+            </dl>
+            <a class="chapter-next" href="#signal">첫 장면 보기 <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="chapter-visual hero-visual" role="img" aria-label="네 개의 궤도가 연결된 밝은 항해 지도">
+            <span class="hero-sun"></span>
+            <span class="hero-orbit orbit-one"></span>
+            <span class="hero-orbit orbit-two"></span>
+            <span class="hero-orbit orbit-three"></span>
+            <span class="hero-node node-one"></span>
+            <span class="hero-node node-two"></span>
+            <span class="hero-node node-three"></span>
+            <span class="hero-horizon"></span>
+          </figure>
         </div>
-        <div class="sun" aria-hidden="true"></div>
       </section>
 
       <section id="signal" class="chapter scene scene-a">
-        <div class="scene-card">
-          <span aria-label="총 4개 장면 중 1번째 장면">01 / 04</span>
-          <h2>신호 수집</h2>
-          <p>view timeline이 지원되는 브라우저에서는 카드가 viewport 진입률에 맞춰 또렷해집니다.</p>
+        <div class="chapter-layout">
+          <div class="chapter-copy">
+            <p class="scene-index" aria-label="총 4개 장면 중 1번째 장면">01 / 04</p>
+            <p class="eyebrow">Signal</p>
+            <h2>신호를 포착하다</h2>
+            <p class="chapter-lead">
+              첫 장면이 viewport에 들어오면 view timeline이 원의 간격과 신호점의 농도를 조절합니다.
+              지원하지 않는 환경에서는 완성된 정적 지도가 그대로 보입니다.
+            </p>
+            <ul class="scene-notes">
+              <li>텍스트와 시각 효과를 독립적으로 유지</li>
+              <li>장면 진입률은 CSS timeline으로만 계산</li>
+            </ul>
+            <a class="chapter-next" href="#drift">궤도 이동 <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="chapter-visual signal-visual" role="img" aria-label="중심 신호에서 세 개의 파장이 퍼지는 모습">
+            <span class="signal-core"></span>
+            <span class="signal-ring ring-one"></span>
+            <span class="signal-ring ring-two"></span>
+            <span class="signal-ring ring-three"></span>
+            <span class="signal-point point-one"></span>
+            <span class="signal-point point-two"></span>
+            <span class="signal-point point-three"></span>
+          </figure>
         </div>
       </section>
 
       <section id="drift" class="chapter scene scene-b">
-        <div class="scene-card">
-          <span aria-label="총 4개 장면 중 2번째 장면">02 / 04</span>
-          <h2>궤도 이동</h2>
-          <p>sticky 배치와 scroll snap이 JavaScript 없는 화면 전환 리듬을 만듭니다.</p>
+        <div class="chapter-layout">
+          <div class="chapter-copy">
+            <p class="scene-index" aria-label="총 4개 장면 중 2번째 장면">02 / 04</p>
+            <p class="eyebrow">Drift</p>
+            <h2>궤도를 따라 이동하다</h2>
+            <p class="chapter-lead">
+              sticky 장면 안에서 항해점이 경로를 따라 이동합니다. 페이지 스크롤은 브라우저가 그대로
+              소유하며, 별도의 scroll hijacking은 없습니다.
+            </p>
+            <ul class="scene-notes">
+              <li>scroll snap은 가까운 장면 정렬만 보조</li>
+              <li>키보드와 anchor 이동 순서를 그대로 보존</li>
+            </ul>
+            <a class="chapter-next" href="#arrival">도착 지점 <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="chapter-visual drift-visual" role="img" aria-label="점선 궤도를 따라 이동하는 항해점">
+            <span class="drift-track track-one"></span>
+            <span class="drift-track track-two"></span>
+            <span class="drift-marker"></span>
+            <span class="drift-coordinate coordinate-one" aria-hidden="true">A1</span>
+            <span class="drift-coordinate coordinate-two" aria-hidden="true">B4</span>
+            <span class="drift-coordinate coordinate-three" aria-hidden="true">C7</span>
+          </figure>
         </div>
       </section>
 
       <section id="arrival" class="chapter scene scene-c">
-        <div class="scene-card">
-          <span aria-label="총 4개 장면 중 3번째 장면">03 / 04</span>
-          <h2>도착</h2>
-          <p>중앙 maintainer bot이 다음 장면, 접근성, fallback 개선을 작은 PR로 제안합니다.</p>
+        <div class="chapter-layout">
+          <div class="chapter-copy">
+            <p class="scene-index" aria-label="총 4개 장면 중 3번째 장면">03 / 04</p>
+            <p class="eyebrow">Arrival</p>
+            <h2>하나의 지점에 도착하다</h2>
+            <p class="chapter-lead">
+              여러 궤도가 한 좌표로 수렴하면서 앞선 장면의 흐름을 정리합니다. 진행 표시줄은 전체
+              문서에서 현재 위치를 계속 보여 줍니다.
+            </p>
+            <ul class="scene-notes">
+              <li>전체 진행률과 장면 번호를 함께 제공</li>
+              <li>색상 외에도 선, 크기, 문장으로 상태 전달</li>
+            </ul>
+            <a class="chapter-next" href="#fallback">읽기 유지 <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="chapter-visual arrival-visual" role="img" aria-label="세 개의 좌표선이 도착점으로 모이는 모습">
+            <span class="arrival-axis axis-horizontal"></span>
+            <span class="arrival-axis axis-vertical"></span>
+            <span class="arrival-ring arrival-one"></span>
+            <span class="arrival-ring arrival-two"></span>
+            <span class="arrival-ring arrival-three"></span>
+            <span class="arrival-core"></span>
+            <span class="arrival-label" aria-hidden="true">ARRIVAL 03</span>
+          </figure>
         </div>
       </section>
 
       <section id="fallback" class="chapter scene scene-d">
-        <div class="scene-card">
-          <span aria-label="총 4개 장면 중 4번째 장면">04 / 04</span>
-          <h2>읽기 유지</h2>
-          <p>
-            scroll-driven animation이 꺼져도 장면 순서와 문장이 그대로 남아 여정을 끝까지 읽을 수
-            있습니다.
-          </p>
-          <ul class="scene-notes" aria-label="fallback 기준">
-            <li>모션은 기능 향상으로만 적용</li>
-            <li>정적 환경에서도 모든 장면 유지</li>
-          </ul>
+        <div class="chapter-layout">
+          <div class="chapter-copy">
+            <p class="scene-index" aria-label="총 4개 장면 중 4번째 장면">04 / 04</p>
+            <p class="eyebrow">Fallback</p>
+            <h2>효과가 없어도 읽히다</h2>
+            <p class="chapter-lead">
+              상단의 정적 읽기를 켜면 장면 애니메이션과 snap이 멈춥니다. 브라우저가 scroll timeline을
+              지원하지 않아도 제목, 순서, 설명은 사라지지 않습니다.
+            </p>
+            <ul class="scene-notes">
+              <li>사용자가 선택하는 정적 읽기 모드</li>
+              <li>reduced motion 환경의 자동 모션 축소</li>
+              <li>런타임 JavaScript 없이 동일한 문서 유지</li>
+            </ul>
+            <a class="chapter-next" href="#top">처음으로 <span aria-hidden="true">↑</span></a>
+          </div>
+          <figure class="chapter-visual fallback-visual" role="img" aria-label="애니메이션 없이도 순서대로 읽히는 네 개의 문서 장면">
+            <div class="document-sheet">
+              <span class="document-title"></span>
+              <span class="document-line line-long"></span>
+              <span class="document-line line-mid"></span>
+              <span class="document-line line-short"></span>
+              <span class="document-scenes" aria-hidden="true">
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+                <span>04</span>
+              </span>
+            </div>
+          </figure>
         </div>
       </section>
     </main>
