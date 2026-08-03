@@ -40,6 +40,7 @@
     min-width: 320px;
     min-height: 100vh;
     background: var(--color-bg);
+    timeline-scope: --signal, --drift, --arrival, --fallback;
   }
 
   a {
@@ -114,6 +115,7 @@
 
   .scene-nav a {
     min-height: 34px;
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -122,6 +124,34 @@
     color: var(--color-muted);
     font-size: 12px;
     white-space: nowrap;
+  }
+
+  .scene-nav a::after {
+    content: '';
+    position: absolute;
+    inset: auto 10px 3px;
+    height: 2px;
+    border-radius: 999px;
+    opacity: 0;
+    background: var(--color-cyan);
+    animation: mark-current-scene linear both;
+    animation-range: entry 25% exit 75%;
+  }
+
+  .scene-nav a[href='#signal']::after {
+    animation-timeline: --signal;
+  }
+
+  .scene-nav a[href='#drift']::after {
+    animation-timeline: --drift;
+  }
+
+  .scene-nav a[href='#arrival']::after {
+    animation-timeline: --arrival;
+  }
+
+  .scene-nav a[href='#fallback']::after {
+    animation-timeline: --fallback;
   }
 
   .scene-nav a:hover,
@@ -337,21 +367,25 @@
 
   .scene-a {
     --scene-color: var(--color-cyan);
+    view-timeline: --signal block;
     background: #f8fcfd;
   }
 
   .scene-b {
     --scene-color: var(--color-violet);
+    view-timeline: --drift block;
     background: #fbfaff;
   }
 
   .scene-c {
     --scene-color: var(--color-primary);
+    view-timeline: --arrival block;
     background: #fffdf7;
   }
 
   .scene-d {
     --scene-color: #2f845b;
+    view-timeline: --fallback block;
     background: #f8fff9;
   }
 
@@ -658,6 +692,11 @@
 
   @keyframes story-progress {
     to { transform: scaleX(1); }
+  }
+
+  @keyframes mark-current-scene {
+    0%, 100% { opacity: 0; }
+    18%, 82% { opacity: 1; }
   }
 
   @keyframes reveal-chapter {
