@@ -765,8 +765,8 @@
 @layer responsive {
   @media (max-width: 920px) {
     :root {
-      --header-offset: 136px;
-      --chapter-block: 156px;
+      --header-offset: 104px;
+      --chapter-block: 128px;
     }
 
     .site-header {
@@ -777,9 +777,16 @@
 
     .scene-nav {
       grid-column: 1 / -1;
+      grid-row: 2;
       justify-content: flex-start;
       overflow-x: auto;
       padding-bottom: 2px;
+    }
+
+    .reading-toggle {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: end;
     }
 
     .chapter-layout {
