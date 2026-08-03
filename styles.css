@@ -43,6 +43,26 @@
     timeline-scope: --signal, --drift, --arrival, --fallback;
   }
 
+  #signal,
+  .scene-nav a[href='#signal'] {
+    --scene-timeline: --signal;
+  }
+
+  #drift,
+  .scene-nav a[href='#drift'] {
+    --scene-timeline: --drift;
+  }
+
+  #arrival,
+  .scene-nav a[href='#arrival'] {
+    --scene-timeline: --arrival;
+  }
+
+  #fallback,
+  .scene-nav a[href='#fallback'] {
+    --scene-timeline: --fallback;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -135,23 +155,8 @@
     opacity: 0;
     background: var(--color-cyan);
     animation: mark-current-scene linear both;
+    animation-timeline: var(--scene-timeline);
     animation-range: entry 25% exit 75%;
-  }
-
-  .scene-nav a[href='#signal']::after {
-    animation-timeline: --signal;
-  }
-
-  .scene-nav a[href='#drift']::after {
-    animation-timeline: --drift;
-  }
-
-  .scene-nav a[href='#arrival']::after {
-    animation-timeline: --arrival;
-  }
-
-  .scene-nav a[href='#fallback']::after {
-    animation-timeline: --fallback;
   }
 
   .scene-nav a:hover,
@@ -365,27 +370,27 @@
     font-size: 16px;
   }
 
+  .scene {
+    view-timeline: var(--scene-timeline) block;
+  }
+
   .scene-a {
     --scene-color: var(--color-cyan);
-    view-timeline: --signal block;
     background: #f8fcfd;
   }
 
   .scene-b {
     --scene-color: var(--color-violet);
-    view-timeline: --drift block;
     background: #fbfaff;
   }
 
   .scene-c {
     --scene-color: var(--color-primary);
-    view-timeline: --arrival block;
     background: #fffdf7;
   }
 
   .scene-d {
     --scene-color: #2f845b;
-    view-timeline: --fallback block;
     background: #f8fff9;
   }
 
