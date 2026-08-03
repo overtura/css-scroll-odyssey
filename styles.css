@@ -459,12 +459,12 @@
     width: 34px;
     aspect-ratio: 1;
     border: 9px solid white;
-    background: var(--color-cyan);
-    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-cyan) 32%, transparent);
+    background: var(--scene-color);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--scene-color) 32%, transparent);
   }
 
   .signal-ring {
-    border: 1px solid color-mix(in srgb, var(--color-cyan) 44%, transparent);
+    border: 1px solid color-mix(in srgb, var(--scene-color) 44%, transparent);
   }
 
   .ring-one { width: 26%; aspect-ratio: 1; }
@@ -475,7 +475,7 @@
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: var(--color-cyan);
+    background: var(--scene-color);
   }
 
   .point-one { top: 28%; left: 31%; }
@@ -489,7 +489,7 @@
   .drift-track {
     top: 50%;
     left: 50%;
-    border: 1px dashed color-mix(in srgb, var(--color-violet) 50%, transparent);
+    border: 1px dashed color-mix(in srgb, var(--scene-color) 50%, transparent);
     border-radius: 50%;
     transform: translate(-50%, -50%) rotate(-12deg);
   }
@@ -504,8 +504,8 @@
     aspect-ratio: 1;
     border: 7px solid white;
     border-radius: 50%;
-    background: var(--color-violet);
-    box-shadow: 0 0 0 1px var(--color-violet);
+    background: var(--scene-color);
+    box-shadow: 0 0 0 1px var(--scene-color);
   }
 
   .drift-coordinate {
@@ -514,9 +514,9 @@
     place-items: center;
     width: 36px;
     height: 26px;
-    border: 1px solid color-mix(in srgb, var(--color-violet) 24%, transparent);
+    border: 1px solid color-mix(in srgb, var(--scene-color) 24%, transparent);
     border-radius: 5px;
-    color: var(--color-violet);
+    color: var(--scene-color);
     background: white;
     font-size: 10px;
     font-weight: 900;
@@ -533,7 +533,7 @@
   .arrival-axis {
     top: 50%;
     left: 50%;
-    background: color-mix(in srgb, var(--color-primary) 24%, transparent);
+    background: color-mix(in srgb, var(--scene-color) 24%, transparent);
   }
 
   .axis-horizontal { width: 78%; height: 1px; transform: translate(-50%, -50%); }
@@ -542,7 +542,7 @@
   .arrival-ring {
     top: 50%;
     left: 50%;
-    border: 1px solid color-mix(in srgb, var(--color-primary) 46%, transparent);
+    border: 1px solid color-mix(in srgb, var(--scene-color) 46%, transparent);
     border-radius: 50%;
     transform: translate(-50%, -50%);
   }
@@ -557,7 +557,7 @@
     width: 22px;
     aspect-ratio: 1;
     border-radius: 2px;
-    background: var(--color-primary);
+    background: var(--scene-color);
     transform: translate(-50%, -50%) rotate(45deg);
   }
 
@@ -565,7 +565,7 @@
     position: absolute;
     right: 12%;
     bottom: 14%;
-    color: var(--color-primary);
+    color: var(--scene-color);
     font-size: 10px;
     font-weight: 900;
   }
@@ -580,24 +580,24 @@
     width: min(62%, 380px);
     min-height: 390px;
     padding: 44px 38px;
-    border: 1px solid color-mix(in srgb, #2f845b 28%, transparent);
+    border: 1px solid color-mix(in srgb, var(--scene-color) 28%, transparent);
     border-radius: 4px;
     background: white;
-    box-shadow: 16px 16px 0 color-mix(in srgb, #2f845b 9%, transparent);
+    box-shadow: 16px 16px 0 color-mix(in srgb, var(--scene-color) 9%, transparent);
   }
 
   .document-title,
   .document-line {
     display: block;
     height: 9px;
-    background: color-mix(in srgb, #2f845b 22%, transparent);
+    background: color-mix(in srgb, var(--scene-color) 22%, transparent);
   }
 
   .document-title {
     width: 48%;
     height: 16px;
     margin-bottom: 38px;
-    background: #2f845b;
+    background: var(--scene-color);
   }
 
   .document-line + .document-line { margin-top: 13px; }
@@ -618,8 +618,8 @@
     min-height: 54px;
     display: grid;
     place-items: center;
-    border: 1px solid color-mix(in srgb, #2f845b 24%, transparent);
-    color: #2f845b;
+    border: 1px solid color-mix(in srgb, var(--scene-color) 24%, transparent);
+    color: var(--scene-color);
     font-size: 11px;
     font-weight: 900;
   }
